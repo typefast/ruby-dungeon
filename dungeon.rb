@@ -64,3 +64,14 @@ my_dungeon.add_room(:smallcave, "Small Cave", "A small confined cave", {:east =>
 
 #Start dungeon, place player in large cave
 my_dungeon.start(:largecave)
+
+#get input
+while true
+  puts "What direction do you take?"
+  direction = gets.chomp.to_sym
+  my_dungeon.go(direction)
+  
+  if direction == "exit"
+    exit(0)
+  end
+end
